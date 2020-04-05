@@ -5,18 +5,6 @@ main()
 {
 	
 	
-	printf("\nEnter the arrival time and burst time \n");
-	for( Pnumber = 0; Pnumber < n; Pnumber++) 
-	{
-		printf("\nProcess P%d\n", Pnumber+1);
-		printf("Arrival time = "); 
-		scanf("%d",&arrivaltime[ Pnumber]);
-		printf("\tBurst time = "); 
-		scanf("%d",&bursttime[ Pnumber]); 
-		remaining_time[ Pnumber]=bursttime[ Pnumber]; 
-	} 
-	//
-	
     
     {
         btime[i]=remaining_time[i];
