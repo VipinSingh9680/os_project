@@ -3,11 +3,7 @@
 void program(int n,int remaining_time[10],int current_time,int arrivaltime[10], int bursttime[10]);
 main() 
 {
-	int  Pnumber,j,n,Curr_Time,Remaining_process,indicator,time_quantum,waiting,turnaround_t,arrivaltime[10],bursttime[10],remaining_time[10],x=1;
-	0;
-	printf("Number of process "); 
-	scanf("%d",&n);
-	Remaining_process = n;
+	
 	
 	printf("\nEnter the arrival time and burst time \n");
 	for( Pnumber = 0; Pnumber < n; Pnumber++) 
