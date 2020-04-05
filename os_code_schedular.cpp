@@ -20,11 +20,7 @@ main()
 		remaining_time[ Pnumber]=bursttime[ Pnumber]; 
 	} 
 	//
-	time_quantum=3;
-	Curr_Time=0;
-	for( Pnumber=0;Remaining_process!=0;) 
-	{void program(int n,int remaining_time[10],int current_time,int arrivaltime[10], int bursttime[10]){	
-	float average_waiting,average_turnaround;
+	
     int i,j,m=n,temp,btime[20], Pnumber[20],waiting_time[20],turn_around_time[20],total=0,location;
     //
     for(i=0;i<m;i++)
