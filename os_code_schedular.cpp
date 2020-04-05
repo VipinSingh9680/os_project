@@ -21,9 +21,7 @@ main()
 	} 
 	//
 	
-    int i,j,m=n,temp,btime[20], Pnumber[20],waiting_time[20],turn_around_time[20],total=0,location;
-    //
-    for(i=0;i<m;i++)
+    
     {
         btime[i]=remaining_time[i];
         waiting_time[i]=current_time-arrivaltime[i]-btime[i];
