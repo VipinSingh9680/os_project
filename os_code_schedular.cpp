@@ -4,9 +4,7 @@ void program(int n,int remaining_time[10],int current_time,int arrivaltime[10], 
 main() 
 {
 	int  Pnumber,j,n,Curr_Time,Remaining_process,indicator,time_quantum,waiting,turnaround_t,arrivaltime[10],bursttime[10],remaining_time[10],x=1;
-	indicator = 0;
-	waiting = 0;
-	turnaround_t = 0;
+	0;
 	printf("Number of process "); 
 	scanf("%d",&n);
 	Remaining_process = n;
@@ -25,7 +23,54 @@ main()
 	time_quantum=3;
 	Curr_Time=0;
 	for( Pnumber=0;Remaining_process!=0;) 
-	{
+	{void program(int n,int remaining_time[10],int current_time,int arrivaltime[10], int bursttime[10]){	
+	float average_waiting,average_turnaround;
+    int i,j,m=n,temp,btime[20], Pnumber[20],waiting_time[20],turn_around_time[20],total=0,location;
+    //
+    for(i=0;i<m;i++)
+    {
+        btime[i]=remaining_time[i];
+        waiting_time[i]=current_time-arrivaltime[i]-btime[i];
+		Pnumber[i]=i+1;
+    }
+    for(i=0;i<m;i++)
+    {
+        location=i;
+        for(j=i+1;j<m;j++)
+        {
+            if(btime[j]<btime[location]){
+            	location=j;
+            }
+        }
+        temp=btime[i];
+        btime[i]=btime[location];
+        btime[location]=temp;
+        temp= Pnumber[i];
+        Pnumber[i]= Pnumber[location];
+        Pnumber[location]=temp;
+    }
+	
+    for(i=1;i<m;i++)
+    {
+        for(j=0;j<i;j++){
+        	waiting_time[i]+=btime[j];
+        }
+        total+=waiting_time[i];
+    }
+    average_waiting=(float)total/m;
+    total=0;
+    printf("\nProcess\t\tBurst time\t\twaiting time\t\tTurnaround Time");
+    for(i=0;i<m;i++)
+    {
+        turn_around_time[i]=btime[i]+waiting_time[i];
+        total=total + turn_around_time[i];
+        printf("\nP%d\t\t\t%d\t\t\t%d\t\t\t%d", Pnumber[i],btime[i],waiting_time[i],turn_around_time[i]);
+    }
+    average_turnaround=(float)total/m;
+    printf("\nAverage waiting time = %f",average_waiting);
+    printf("\nAverage turnaround time = %f\n",average_turnaround);
+	
+}
 		if(remaining_time[ Pnumber]<=time_quantum && remaining_time[ Pnumber]>0)
 		{ 
 			Curr_Time+=remaining_time[ Pnumber]; 
